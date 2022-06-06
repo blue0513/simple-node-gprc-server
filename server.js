@@ -15,6 +15,7 @@ const myProto = grpc.loadPackageDefinition(packageDefinition).myproto;
 function sayHello(call, callback) {
   console.log('Requested: sayHello', call.request)
   callback(null, {message: 'Hello ' + call.request.name});
+  // callback(null, {code: grpc.status.INTERNAL, message: 'invalid input'});
 }
 // add another methods
 // ......
